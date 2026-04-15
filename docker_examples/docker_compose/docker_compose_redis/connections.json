@@ -1,0 +1,24 @@
+{
+    "connections": [
+        {
+            "out": "sensory",
+            "in": "perceptual",
+            "ip/port": "/home/node/codelets/sensory/memories",
+            "type": "local",
+            "group": []
+        },
+        {
+            "out": "perceptual",
+            "in": "behavioral",
+            "ip/port": "localhost:6379",
+            "type": "redis",
+            "group": []
+        },{
+            "out": "behavioral",
+            "in": "motor",
+            "ip/port": "/home/node/codelets/behavioral/memories",
+            "type": "local",
+            "group": []
+        }
+    ]
+}
