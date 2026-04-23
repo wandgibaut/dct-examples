@@ -4,16 +4,20 @@ services:
     image: "wandgibaut/python_codelet"
     volumes:
       - ./nodes/node1/:/home/node
+      - ../../common:/home/common:ro
     network_mode: host
     environment:
       - ROOT_NODE_DIR=/home/node
+      - DCT_COMMON_DIR=/home/common
     command: /home/node/nodeMaster.sh 127.0.0.1:9998
 
   node2:
     image: "wandgibaut/python_codelet"
     volumes:
       - ./nodes/node2/:/home/node
+      - ../../common:/home/common:ro
     network_mode: host
     environment:
       - ROOT_NODE_DIR=/home/node
+      - DCT_COMMON_DIR=/home/common
     command: /home/node/nodeMaster.sh 127.0.0.1:9997

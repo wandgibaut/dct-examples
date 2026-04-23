@@ -1,16 +1,8 @@
 #!/bin/bash
 
-#*****************************************************************************#
-# Copyright (c) 2020  Wandemberg Gibaut                                       #
-# All rights reserved. This program and the accompanying materials            #
-# are made available under the terms of the MIT License                       #
-# which accompanies this distribution, and is available at                    #
-# https://opensource.org/licenses/MIT                                         #
-#                                                                             #
-# Contributors:                                                               #
-#      W. Gibaut                                                              #
-#                                                                             #
-#*****************************************************************************#
+set -euo pipefail
 
-python3 /home/create_memories.py "$@"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+COMMON_DIR="${DCT_COMMON_DIR:-$SCRIPT_DIR/../../common}"
 
+DCT_EXAMPLES_ROOT="$SCRIPT_DIR" python3 "$COMMON_DIR/create_memories.py" "$@"
